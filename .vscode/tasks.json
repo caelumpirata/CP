@@ -2,31 +2,22 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build and Run C++",
+            "label": "Build, Run, and Cleanup C++",
             "type": "shell",
-            "command": "g++ -O2 -Wall -Wl,--stack=268435456 \"${file}\" -o sol.exe && ./sol.exe && rm sol.exe",
+            "command": "cmd.exe",
+            "args": [
+                "/c",
+                "g++ \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\" -O2 -Wall -Wl,--stack=536870912 -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG && \"${fileDirname}\\${fileBasenameNoExtension}.exe\" && del \"${fileDirname}\\${fileBasenameNoExtension}.exe\""
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "presentation": {
-                "reveal": "always",
-                "panel": "new"
-            },
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}"
-                ],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
             }
         }
     ]
