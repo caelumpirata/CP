@@ -24,7 +24,6 @@ configure path in `Environment variable -> system variables -> path` and add the
 			"int main() {",
 			"  ios::sync_with_stdio(false);",
 			"  cin.tie(nullptr);",
-			"",
 			"  return 0;",
 			"}"
 		],
@@ -60,3 +59,20 @@ configure path in `Environment variable -> system variables -> path` and add the
 	}
 }
 ```
+
+## build and run from anywhere 
+to do this,
+create `sol.bat` file and place it anywhere you want. (i put it inside D:\CP\)
+make sure to add `sol.bat` to `System PATH`.
+
+```
+@echo off
+g++ sol.cpp -o sol.exe -O2 -Wall -Wl,--stack=536870912 -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG
+sol.exe
+del sol.exe
+```
+after creating it,
+Search "Environment Variables" in Windows.
+Edit "Path" under System Variables.
+Click New → Add the path D:\CP\.
+Now, you can run `sol.bat` from any folder!
