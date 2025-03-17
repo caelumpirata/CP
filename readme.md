@@ -67,7 +67,7 @@ make sure to add `sol.bat` to `System PATH`.
 
 ```
 @echo off
-g++ sol.cpp -o sol.exe -O2 -Wall -Wl,--stack=536870912 -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG
+g++ sol.cpp -o sol -O2 -Wall -Wextra -std=c++20 -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -fmax-errors=1
 sol.exe
 del sol.exe
 ```
