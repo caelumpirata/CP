@@ -62,6 +62,7 @@ press `Ctrl + Shift + P` >> `Snippets: Configure Snippets` >> `cpp.json` and pas
 	}
 }
 ```
+now when you create new file, say `sol.cpp`, and to import the template now just type `q1` and press enter.
 
 ## build and run from anywhere 
 to do this,
