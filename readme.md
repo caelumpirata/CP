@@ -8,6 +8,9 @@ https://winlibs.com/
 configure path in `Environment variable -> system variables -> path` and add the `bin` path of winlilbs into it to configure c++ compiler.
 
 ## configure c++ snippet (c++ template) in `VS Code`
+
+press `Ctrl + Shift + P` >> `Snippets: Configure Snippets` >> `cpp.json` and paste 
+
 ```
 {
 	"New C++ File": {
